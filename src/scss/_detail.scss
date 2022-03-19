@@ -1,0 +1,155 @@
+& .detail {
+  @include position(center, _);
+  flex-direction: column;
+  width: 100%;
+  height: 90.5vh;
+  transition: 0.5s;
+  @include sm {
+    height: 200vh;
+  }
+  & .back-container {
+    @include position(center, left);
+    width: 80%;
+    height: 10vh;
+    margin: 50px 0;
+    & .back {
+      @include position(center, space-between);
+      cursor: pointer;
+      transition: 0.5s;
+      border-radius: 10px;
+      padding: 10px 20px;
+      width: 60px;
+      box-shadow: $shadow;
+      & p {
+        margin: 0;
+      }
+      &:hover {
+        transform: translateY(-1px);
+        transition: 0.2s;
+        box-shadow: $shadower;
+      }
+      &:active {
+        transform: translateY(1px);
+        box-shadow: $shadow;
+      }
+      & .fas {
+        width: 20px;
+      }
+    }
+  }
+
+  & .detail-container {
+    @include position(center, space-between);
+    width: 75%;
+    height: 60%;
+    @include sm {
+      flex-direction: column;
+      width: 85%;
+    }
+
+    & img {
+      width: 40%;
+      height: 100%;
+      @include sm {
+        width: 100%;
+        height: 60vh;
+      }
+    }
+    & .main-details-container {
+      @include position(_, space-between);
+      flex-direction: column;
+      width: 55%;
+      height: 90%;
+      @include sm {
+        width: 100%;
+        // height: 200vh;
+      }
+
+      & h2 {
+        margin: 0;
+        height: 15%;
+      }
+      & .main-details {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        width: 100%;
+        height: 50%;
+        @include sm {
+          height: 100vh;
+        }
+
+        & p {
+          @include position(center, _);
+          margin: 0;
+          width: 50%;
+          height: 20%;
+          font-size: 15px;
+          font-weight: bold;
+          @include sm {
+            height: 10vh;
+            width: 100%;
+          }
+          & span {
+            margin-left: 10px;
+            font-weight: lighter;
+            color: lighten(black, 40);
+          }
+        }
+      }
+      & .border-cs {
+        @include position(center, _);
+        width: 100%;
+        height: 25%;
+        @include sm {
+          height: 40vh;
+          margin-top: 40px;
+        }
+        & .border-cs-container {
+          display: flex;
+          align-items: center;
+          width: 100%;
+          height: auto;
+          @include sm {
+            height: 100%;
+            flex-direction: column;
+          }
+          & h3 {
+            width: 35%;
+            font-size: 16px;
+            margin: 0;
+            margin-right: 10px;
+            @include sm {
+              width: 100%;
+            }
+          }
+          & ul {
+            flex-wrap: wrap;
+            padding: 0;
+            margin: 0;
+            list-style-type: none;
+            display: flex;
+            width: 100%;
+            height: auto;
+            & li {
+              cursor: pointer;
+              padding: 5px 10px;
+              margin: 2px 20px 2px 0;
+              border-radius: 5px;
+              box-shadow: $shadower;
+              &:hover {
+                transform: translateY(-1px);
+                transition: 0.2s;
+                box-shadow: $shadower;
+              }
+              &:active {
+                transform: translateY(1px);
+                box-shadow: $shadow;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
